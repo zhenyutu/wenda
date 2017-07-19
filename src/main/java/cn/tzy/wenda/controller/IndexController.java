@@ -19,11 +19,6 @@ public class IndexController {
     @RequestMapping("/")
     @ResponseBody
     public String index(){
-        User user = new User("user");
-        userDao.insertUser(user);
-        User user1 = userDao.seletById(1);
-        System.out.println(user1.getName());
-
         return "Hello World";
     }
 }
