@@ -6,6 +6,8 @@ import cn.tzy.wenda.model.ViewObject;
 import cn.tzy.wenda.service.QuestionService;
 import cn.tzy.wenda.service.UserService;
 import com.sun.deploy.net.HttpResponse;
+import com.sun.javafx.sg.prism.NGShape;
+import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,17 +49,23 @@ public class IndexController {
         return "index";
     }
     @RequestMapping("/in")
-    public String in(){
+    public String in(Model model,@RequestParam(value = "next",required = false)String next){
+        model.addAttribute("next",next);
         return "login";
     }
 
     @RequestMapping("/login")
-    public String login(Model model, HttpServletResponse httpResponse,@RequestParam String username,@RequestParam String password){
+    public String login(Model model, HttpServletResponse httpResponse,
+                        @RequestParam String username,@RequestParam String password,@RequestParam(value = "next",required = false)String next){
         Map<String,String> map = userService.login(username,password);
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket",map.get("ticket"));
             cookie.setPath("/");
             httpResponse.addCookie(cookie);
+
+            if (StringUtils.isNotBlank(next)){
+                return "redirect:"+next;
+            }
 
             return "redirect:/";
         }else {
@@ -73,13 +81,16 @@ public class IndexController {
     }
 
     @RequestMapping(path = "/register",method = RequestMethod.POST)
-    public String register(Model model, HttpServletResponse httpResponse, @RequestParam String username, @RequestParam String password){
+    public String register(Model model, HttpServletResponse httpResponse,
+                           @RequestParam String username, @RequestParam String password,@RequestParam(value = "next",required = false)String next){
         Map<String,String> map = userService.register(username,password);
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket",map.get("ticket"));
             cookie.setPath("/");
             httpResponse.addCookie(cookie);
 
+            if (StringUtils.isNotBlank(next))
+                return "redirect:"+next;
             return "redirect:/";
         }else {
             model.addAttribute("msg", map.get("msg"));
