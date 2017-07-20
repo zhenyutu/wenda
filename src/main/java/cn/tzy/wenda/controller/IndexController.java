@@ -5,12 +5,15 @@ import cn.tzy.wenda.model.User;
 import cn.tzy.wenda.model.ViewObject;
 import cn.tzy.wenda.service.QuestionService;
 import cn.tzy.wenda.service.UserService;
+import com.sun.deploy.net.HttpResponse;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 /**
@@ -43,20 +46,39 @@ public class IndexController {
 
         return "index";
     }
-
-    @RequestMapping("/login")
-    public String login(Model model){
+    @RequestMapping("/in")
+    public String in(){
         return "login";
     }
 
-    @RequestMapping(path = "/register",method = RequestMethod.POST)
-    public String register(Model model, @RequestParam String username,@RequestParam String password){
-        Map<String,String> map = userService.register(username,password);
-        if (map.containsKey("msg")) {
+    @RequestMapping("/login")
+    public String login(Model model, HttpServletResponse httpResponse,@RequestParam String username,@RequestParam String password){
+        Map<String,String> map = userService.login(username,password);
+        if (map.containsKey("ticket")) {
+            Cookie cookie = new Cookie("ticket",map.get("ticket"));
+            cookie.setPath("/");
+            httpResponse.addCookie(cookie);
+
+            return "redirect:/";
+        }else {
             model.addAttribute("msg", map.get("msg"));
             return "login";
         }
-        return "redirect:/";
+    }
+
+    @RequestMapping(path = "/register",method = RequestMethod.POST)
+    public String register(Model model, HttpServletResponse httpResponse, @RequestParam String username, @RequestParam String password){
+        Map<String,String> map = userService.register(username,password);
+        if (map.containsKey("ticket")) {
+            Cookie cookie = new Cookie("ticket",map.get("ticket"));
+            cookie.setPath("/");
+            httpResponse.addCookie(cookie);
+
+            return "redirect:/";
+        }else {
+            model.addAttribute("msg", map.get("msg"));
+            return "login";
+        }
     }
 
     @RequestMapping("/user/{userId}")
