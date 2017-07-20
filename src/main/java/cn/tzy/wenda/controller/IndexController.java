@@ -9,14 +9,9 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by tuzhenyu on 17-7-19.
@@ -47,6 +42,21 @@ public class IndexController {
         model.addAttribute("vos",vos);
 
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login(Model model){
+        return "login";
+    }
+
+    @RequestMapping(path = "/register",method = RequestMethod.POST)
+    public String register(Model model, @RequestParam String username,@RequestParam String password){
+        Map<String,String> map = userService.register(username,password);
+        if (map.containsKey("msg")) {
+            model.addAttribute("msg", map.get("msg"));
+            return "login";
+        }
+        return "redirect:/";
     }
 
     @RequestMapping("/user/{userId}")

@@ -1,10 +1,7 @@
 package cn.tzy.wenda.dao;
 
 import cn.tzy.wenda.model.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * Created by tuzhenyu on 17-7-19.
@@ -21,6 +18,9 @@ public interface UserDao {
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where id=#{id}"})
     public User seletById(int id);
+
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where name=#{name}"})
+    public User seletByName(@Param("name")String name);
 
     @Delete({"delete from",TABLE_NAEM,"where id=#{id}"})
     public void deleteById(int id);
