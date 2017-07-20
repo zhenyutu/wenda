@@ -26,6 +26,9 @@ public interface QuestionDao {
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"order by id desc limit #{offset},#{limit}"})
     public List<Question> selectLatestQuestions(@Param("offset") int offset,@Param("limit") int limit);
 
+    @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where user_id = #{userId} order by id desc limit #{offset},#{limit}"})
+    public List<Question> selectLatestQuestionsByUser(@Param("userId") int userId,@Param("offset") int offset,@Param("limit") int limit);
+
     @Delete({"delete from",TABLE_NAEM,"where id=#{id}"})
     public void deleteById(int id);
 }

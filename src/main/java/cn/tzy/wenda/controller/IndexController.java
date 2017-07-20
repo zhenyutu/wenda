@@ -5,9 +5,11 @@ import cn.tzy.wenda.model.User;
 import cn.tzy.wenda.model.ViewObject;
 import cn.tzy.wenda.service.QuestionService;
 import cn.tzy.wenda.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -35,6 +37,22 @@ public class IndexController {
     @RequestMapping(path = {"/","index"})
     public String index(Model model){
         List<Question> questions = questionService.getLatestQuestions(2,10);
+        List<ViewObject> vos = new ArrayList<>();
+        for (Question question: questions){
+            ViewObject vo = new ViewObject();
+            vo.set("question",question);
+            vo.set("user",userService.getUser(question.getUserId()));
+            vos.add(vo);
+        }
+        model.addAttribute("vos",vos);
+
+        return "index";
+    }
+
+    @RequestMapping("/user/{userId}")
+    public String questionByUser(@PathVariable("userId") int userId,  Model model){
+        System.out.println(userId);
+        List<Question> questions = questionService.getLatestQuestionsByUser(userId,0,10);
         List<ViewObject> vos = new ArrayList<>();
         for (Question question: questions){
             ViewObject vo = new ViewObject();
