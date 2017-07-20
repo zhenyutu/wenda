@@ -18,10 +18,10 @@ public interface LoginTicketDao {
     void insertLoginTicket(LoginTicket loginTicket);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where id=#{id}"})
-    User seletById(int id);
+    LoginTicket seletById(int id);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where ticket=#{ticket}"})
-    User seletByTicket(String ticket);
+    LoginTicket seletByTicket(String ticket);
 
     @Update({"update",TABLE_NAEM,"set status = #{status} where ticket = #{ticket}"})
     void updateStatus(@Param("ticket") String ticket,@Param("status") int status);
