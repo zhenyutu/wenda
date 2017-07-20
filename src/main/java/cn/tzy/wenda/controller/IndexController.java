@@ -66,6 +66,12 @@ public class IndexController {
         }
     }
 
+    @RequestMapping("/logout")
+    public String logout(@CookieValue("ticket") String ticket){
+        userService.logout(ticket);
+        return "redirect:/";
+    }
+
     @RequestMapping(path = "/register",method = RequestMethod.POST)
     public String register(Model model, HttpServletResponse httpResponse, @RequestParam String username, @RequestParam String password){
         Map<String,String> map = userService.register(username,password);

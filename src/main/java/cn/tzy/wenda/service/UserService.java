@@ -93,11 +93,15 @@ public class UserService {
         return map;
     }
 
+    public void logout(String ticket){
+        loginTicketDao.updateStatus(ticket,1);
+    }
+
     public String addLoginTicket(int userId){
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(userId);
         Date date = new Date();
-        date.setTime(date.getTime()+1000*3600*30);
+        date.setTime(date.getTime()+1000*3600*24*30);
         loginTicket.setExpired(date);
         loginTicket.setStatus(0);
         loginTicket.setTicket(UUID.randomUUID().toString().replaceAll("-",""));
