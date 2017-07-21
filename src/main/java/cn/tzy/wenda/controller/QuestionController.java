@@ -3,13 +3,12 @@ package cn.tzy.wenda.controller;
 import cn.tzy.wenda.model.HostHolder;
 import cn.tzy.wenda.model.Question;
 import cn.tzy.wenda.service.QuestionService;
+import cn.tzy.wenda.service.SensitiveService;
 import cn.tzy.wenda.util.WendaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.HtmlUtils;
 import org.springframework.web.util.WebUtils;
 
 import java.util.Date;
@@ -25,6 +24,9 @@ public class QuestionController {
     private QuestionService questionService;
 
     @Autowired
+    private SensitiveService sensitiveService;
+
+    @Autowired
     private HostHolder hostHolder;
 
     @RequestMapping(path = "/question/add",method = RequestMethod.POST)
@@ -32,13 +34,18 @@ public class QuestionController {
     public String addQuestion(@RequestParam("title") String title,@RequestParam("content")String content){
         Question question = new Question();
 
-        question.setTitle(title);
-        question.setContent(content);
+        question.setTitle(HtmlUtils.htmlEscape(title));
+        question.setContent(HtmlUtils.htmlEscape(content));
+
+        question.setTitle(sensitiveService.filter(question.getTitle()));
+        question.setContent(sensitiveService.filter(question.getContent()));
+
+
         question.setCreatedDate(new Date());
         question.setCommentCount(0);
 
         if (hostHolder.getUser()==null){
-            question.setUserId(WendaUtil.ANONYMOUS_USER_ID);
+            return WendaUtil.getJSONString(999);
         }else {
             question.setUserId(hostHolder.getUser().getId());
         }
@@ -48,5 +55,10 @@ public class QuestionController {
         }
 
         return WendaUtil.getJSONString(1);
+    }
+
+    @RequestMapping(path = "/question/{questionId}")
+    public String questionDetail(@PathVariable("questionId")int questionId){
+        return "detail";
     }
 }
