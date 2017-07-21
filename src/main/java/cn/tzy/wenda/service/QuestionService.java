@@ -4,6 +4,7 @@ import cn.tzy.wenda.dao.QuestionDao;
 import cn.tzy.wenda.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.security.krb5.internal.PAForUserEnc;
 
 import java.util.List;
 
@@ -18,6 +19,10 @@ public class QuestionService {
 
     public int addQuestion(Question question){
         return questionDao.insertQuestion(question)>0?question.getId():0;
+    }
+
+    public Question getQuestionById(int qId){
+        return questionDao.seletById(qId);
     }
 
     public List<Question> getLatestQuestions(int offset, int limit){

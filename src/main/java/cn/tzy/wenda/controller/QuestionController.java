@@ -1,12 +1,16 @@
 package cn.tzy.wenda.controller;
 
+import cn.tzy.wenda.dao.UserDao;
 import cn.tzy.wenda.model.HostHolder;
 import cn.tzy.wenda.model.Question;
+import cn.tzy.wenda.model.User;
+import cn.tzy.wenda.model.ViewObject;
 import cn.tzy.wenda.service.QuestionService;
 import cn.tzy.wenda.service.SensitiveService;
 import cn.tzy.wenda.util.WendaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 import org.springframework.web.util.WebUtils;
@@ -28,6 +32,9 @@ public class QuestionController {
 
     @Autowired
     private HostHolder hostHolder;
+
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping(path = "/question/add",method = RequestMethod.POST)
     @ResponseBody
@@ -57,8 +64,12 @@ public class QuestionController {
         return WendaUtil.getJSONString(1);
     }
 
-    @RequestMapping(path = "/question/{questionId}")
-    public String questionDetail(@PathVariable("questionId")int questionId){
+    @RequestMapping(path = "/question/{qId}")
+    public String questionDetail(Model model,@PathVariable("qId")int qId){
+        Question question = questionService.getQuestionById(qId);
+        model.addAttribute("question",question);
+        User user = userDao.seletById(question.getUserId());
+        model.addAttribute("user",user);
         return "detail";
     }
 }

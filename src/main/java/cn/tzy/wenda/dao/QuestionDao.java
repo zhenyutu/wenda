@@ -21,7 +21,7 @@ public interface QuestionDao {
     int insertQuestion(Question question);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where id=#{id}"})
-    User seletById(int id);
+    Question seletById(int id);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"order by id desc limit #{offset},#{limit}"})
     List<Question> selectLatestQuestions(@Param("offset") int offset,@Param("limit") int limit);
