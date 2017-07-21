@@ -36,7 +36,7 @@ public class IndexController {
 
     @RequestMapping(path = {"/","index"})
     public String index(Model model){
-        List<Question> questions = questionService.getLatestQuestions(2,10);
+        List<Question> questions = questionService.getLatestQuestions(0,10);
         List<ViewObject> vos = new ArrayList<>();
         for (Question question: questions){
             ViewObject vo = new ViewObject();

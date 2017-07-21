@@ -16,8 +16,8 @@ public class QuestionService {
     @Autowired
     private QuestionDao questionDao;
 
-    public void addQuestion(Question question){
-        questionDao.insertQuestion(question);
+    public int addQuestion(Question question){
+        return questionDao.insertQuestion(question)>0?question.getId():0;
     }
 
     public List<Question> getLatestQuestions(int offset, int limit){

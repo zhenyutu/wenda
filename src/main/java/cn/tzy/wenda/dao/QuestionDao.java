@@ -18,17 +18,17 @@ public interface QuestionDao {
 
     @Insert({"insert into",TABLE_NAEM,"(",INSERT_FIELDS,") values (#{title},#{content}," +
             "#{createdDate},#{userId},#{commentCount})"})
-    public void insertQuestion(Question question);
+    int insertQuestion(Question question);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where id=#{id}"})
-    public User seletById(int id);
+    User seletById(int id);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"order by id desc limit #{offset},#{limit}"})
-    public List<Question> selectLatestQuestions(@Param("offset") int offset,@Param("limit") int limit);
+    List<Question> selectLatestQuestions(@Param("offset") int offset,@Param("limit") int limit);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAEM,"where user_id = #{userId} order by id desc limit #{offset},#{limit}"})
-    public List<Question> selectLatestQuestionsByUser(@Param("userId") int userId,@Param("offset") int offset,@Param("limit") int limit);
+    List<Question> selectLatestQuestionsByUser(@Param("userId") int userId,@Param("offset") int offset,@Param("limit") int limit);
 
     @Delete({"delete from",TABLE_NAEM,"where id=#{id}"})
-    public void deleteById(int id);
+    void deleteById(int id);
 }
