@@ -27,6 +27,10 @@ public class UserService {
         return userDao.seletById(userId);
     }
 
+    public User getUserByName(String name){
+        return userDao.seletByName(name);
+    }
+
     public void addUser(User user){
         userDao.insertUser(user);
     }
