@@ -1,0 +1,83 @@
+html {
+    background-color: #f0f3f4;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.42857143;
+    color: #58666e;
+    background-color: transparent;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin: 0;
+}
+
+a {
+    color: #363f44;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    color: #141719;
+    text-decoration: none;
+}
+
+label {
+    font-weight: normal;
+}
+
+.letter-chatlist li {
+    margin-bottom: 40px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.letter-chatlist .list-head {
+    margin: 20px 20px 0 0;
+}
+
+.list-head {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    border-radius: 50px;
+}
+
+.list-head img{
+    width: 50px;
+    height: 50px;
+}
+
+.tooltip.right {
+    padding: 0;
+    margin: 0;
+}
+.letter-chatlist .my-reply .tooltip.right, .letter-chatlist .tooltip.right {
+    padding: 0;
+    margin: 0;
+}
+.tooltip.right {
+    padding: 0 5px;
+    margin-left: 3px;
+}
+.letter-chatlist .tooltip {
+    position: relative;
+    float: left;
+}

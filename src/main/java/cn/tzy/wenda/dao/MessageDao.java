@@ -14,6 +14,7 @@ import java.util.List;
 public interface MessageDao {
     String TABLE_NAEM = " message ";
     String INSERT_FIELDS = " from_id, to_id, content, created_date, has_read, conversation_id ";
+    String GROUP_FIELDS = " max(from_id)from_id, max(to_id)to_id, max(content)content, max(created_date)created_date, max(has_read)has_read, conversation_id ";
     String SELECT_FIELDS = " id, " + INSERT_FIELDS;
 
     @Insert({"insert into",TABLE_NAEM,"(",INSERT_FIELDS,") values (#{fromId},#{toId}," +
@@ -30,7 +31,8 @@ public interface MessageDao {
             "order by created_date desc limit #{offset},#{limit}"})
     List<Message> selectConversationDetail(@Param("conversationId") String conversationId,@Param("offset") int offset, @Param("limit") int limit);
 
-    @Select({"select count(id) from",TABLE_NAEM,"where entity_id = #{entityId} and entity_type = #{entityType}"})
-    int getMessageCount(@Param("entityId") int entityId,@Param("entityType") int entityType);
+    @Select({"select",GROUP_FIELDS,",count(id) as id from (select * from ",TABLE_NAEM,"where from_id=${userId} or to_id=${userId} order by created_date desc) tt group by tt.conversation_id " +
+            "order by created_date desc limit #{offset},#{limit}"})
+    List<Message> selectConversationList(@Param("userId") int userId,@Param("offset") int offset, @Param("limit") int limit);
 
 }

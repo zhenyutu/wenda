@@ -58,7 +58,20 @@ public class MessageController {
     }
 
     @RequestMapping(path = "/msg/list",method = RequestMethod.GET)
-    public String getConversationList(){
+    public String getConversationList(Model model){
+        User user = hostHolder.getUser();
+        if (user==null)
+            return "redirect:/in";
+        List<Message> messageList = messageService.getConversationList(user.getId(),0,10);
+        List<ViewObject> conversations = new ArrayList<>();
+        for (Message message : messageList){
+            ViewObject vo = new ViewObject();
+            vo.set("conversation",message);
+            int target_id = message.getFromId()==user.getId()?message.getToId():message.getFromId();
+            vo.set("user",userService.getUser(target_id));
+            conversations.add(vo);
+        }
+        model.addAttribute("conversations",conversations);
         return "letter";
     }
 

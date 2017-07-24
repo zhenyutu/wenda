@@ -2,6 +2,7 @@ package cn.tzy.wenda.service;
 
 import cn.tzy.wenda.dao.MessageDao;
 import cn.tzy.wenda.model.Message;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.HtmlUtils;
@@ -28,5 +29,9 @@ public class MessageService {
 
     public List<Message> getConversationDatil(String conversationId,int offset,int limit){
         return messageDao.selectConversationDetail(conversationId,offset,limit);
+    }
+
+    public List<Message> getConversationList(int userId, int offset, int limit){
+        return messageDao.selectConversationList(userId,offset, limit);
     }
 }
