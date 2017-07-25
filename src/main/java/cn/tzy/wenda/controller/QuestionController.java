@@ -3,6 +3,7 @@ package cn.tzy.wenda.controller;
 import cn.tzy.wenda.dao.UserDao;
 import cn.tzy.wenda.model.*;
 import cn.tzy.wenda.service.CommentService;
+import cn.tzy.wenda.service.LikeService;
 import cn.tzy.wenda.service.QuestionService;
 import cn.tzy.wenda.service.SensitiveService;
 import cn.tzy.wenda.util.WendaUtil;
@@ -37,6 +38,9 @@ public class QuestionController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private LikeService likeService;
 
     @RequestMapping(path = "/question/add",method = RequestMethod.POST)
     @ResponseBody
@@ -78,6 +82,11 @@ public class QuestionController {
         for (Comment comment:commentList){
             ViewObject vo = new ViewObject();
             vo.set("comment",comment);
+            if (hostHolder.getUser()==null)
+                vo.set("liked",0);
+            else
+                vo.set("liked",likeService.getLikeStatus(hostHolder.getUser().getId(),comment.getEntityType(),comment.getId()));
+            vo.set("likeCount",likeService.getLikeCount(comment.getEntityType(),comment.getId()));
             vo.set("user",userDao.seletById(comment.getUserId()));
             comments.add(vo);
         }

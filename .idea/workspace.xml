@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7eea9f-0387-4dcc-af07-e9e98883aaf3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/MessageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/dao/MessageDao.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/dao/MessageDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/MessageService.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/MessageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/letter.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/letter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/LikeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/JedisService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/LikeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/RedisKeyUntil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/detail.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/footer.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wenda.iml" afterPath="$PROJECT_DIR$/wenda.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="letter.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/letter.html">
+      <file leaf-file-name="QuestionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="554">
+              <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -73,13 +79,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupAdd.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/SensitiveService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/CommentSevice.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/model/Comment.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/dao/CommentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/dao/QuestionDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/QuestionService.java" />
@@ -95,6 +98,16 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/letter.html" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/JedisAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/JedisService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/RedisKeyUntil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/LikeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/LikeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupAdd.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/footer.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/detail.html" />
       </list>
     </option>
   </component>
@@ -223,8 +236,34 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,6 +292,166 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -277,6 +476,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,7 +644,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;Oracle" />
   </component>
-  <component name="RunManager" selected="Application.WebApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="false" name="WebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -444,6 +673,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="cn.tzy.wenda.service.SensitiveService" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wenda" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="JedisAdapter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.tzy.wenda.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.tzy.wenda.util.JedisAdapter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -900,14 +1149,24 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tzy.wenda.WebApplication" />
+      <module name="wenda" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.WebApplication" />
       <item index="1" class="java.lang.String" itemvalue="Application.SensitiveService" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.WebApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Application.JedisAdapter" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.WebApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SensitiveService" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.JedisAdapter" />
+        <item index="1" class="java.lang.String" itemvalue="Application.WebApplication" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SensitiveService" />
       </list>
     </recent_temporary>
   </component>
@@ -934,12 +1193,12 @@
       <workItem from="1500799827744" duration="5001000" />
       <workItem from="1500857182582" duration="5105000" />
       <workItem from="1500895056879" duration="6800000" />
-      <workItem from="1500942915236" duration="1570000" />
+      <workItem from="1500942915236" duration="8943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34747000" />
+    <option name="totallyTimeSpent" value="42120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -962,7 +1221,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19367991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24668705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -996,71 +1255,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/interceptor/PassportInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/interceptor/LoginRequestInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/configuration/WebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b1cc9bab/4a61c3b5-90e5-482e-8dca-0d4c1dd750e9/wenda.login_ticket" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/page-index.d7b54ac7.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/page-main.5d4c554d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5290">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/styles/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10005">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/site/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1076,13 +1271,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/jquery.js" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/wenda.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/WendaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1091,24 +1279,10 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b1cc9bab/4a61c3b5-90e5-482e-8dca-0d4c1dd750e9/wenda.question" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupMsg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/WebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="75" column="41" lean-forward="true" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1148,13 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="118" column="79" lean-forward="true" selection-start-line="118" selection-start-column="79" selection-end-line="118" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -1279,18 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/b1cc9bab/e23779a9-7a35-4f5f-a8b7-b4758c5e738e/wenda.comment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/model/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1402,18 +1557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding>
-            <marker date="1500803381293" expanded="true" signature="41:554" ph="..." />
-            <marker date="1500803381293" expanded="true" signature="556:618" ph="/**...*/" />
-            <marker date="1500803381293" expanded="true" signature="1016:1680" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/b1cc9bab/e23779a9-7a35-4f5f-a8b7-b4758c5e738e/wenda.message">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1437,20 +1580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="73" column="40" lean-forward="true" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
-          <folding>
-            <marker date="1500801824601" expanded="false" signature="41:588" ph="..." />
-            <marker date="1500801824601" expanded="true" signature="591:653" ph="/**...*/" />
-            <marker date="1500801824601" expanded="true" signature="983:1068" ph="@{...}" />
-            <marker date="1500801824601" expanded="true" signature="1174:1912" ph="{...}" />
-            <marker date="1500801824601" expanded="true" signature="2033:2702" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1561,6 +1690,420 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <marker date="1500943893059" expanded="true" signature="92:1852" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="140:1841" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="177:1825" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="293:1786" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="409:430" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="472:1027" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="636:1004" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="662:812" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="910:981" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1070:1316" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1109:1170" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1208:1293" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1360:1764" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1446:1511" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1552:1741" ph="..." />
+            <marker date="1500943893059" expanded="true" signature="1648:1720" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding>
+            <marker date="1500949371203" expanded="true" signature="89:2776" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="499:729" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="747:881" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="901:2532" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="922:1071" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1092:1231" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1252:1388" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1409:1553" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1574:1713" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1735:1887" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="1908:2087" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="2108:2280" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="2301:2512" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="2545:2764" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="2563:2751" ph="..." />
+            <marker date="1500949371203" expanded="true" signature="2584:2732" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/JedisAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="70" lean-forward="true" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/JedisService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <marker date="1500970466095" expanded="true" signature="38:208" ph="..." />
+            <marker date="1500970466095" expanded="true" signature="210:272" ph="/**...*/" />
+            <marker date="1500970466095" expanded="true" signature="435:500" ph="{...}" />
+            <marker date="1500970466095" expanded="true" signature="547:650" ph="{...}" />
+            <marker date="1500970466095" expanded="true" signature="697:800" ph="{...}" />
+            <marker date="1500970466095" expanded="true" signature="855:1004" ph="{...}" />
+            <marker date="1500970466095" expanded="true" signature="1039:1175" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/util/RedisKeyUntil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <marker date="1500971083059" expanded="true" signature="28:90" ph="/**...*/" />
+            <marker date="1500971083059" expanded="true" signature="321:419" ph="{...}" />
+            <marker date="1500971083059" expanded="true" signature="488:589" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/service/LikeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <marker date="1500971596443" expanded="true" signature="38:180" ph="..." />
+            <marker date="1500971596443" expanded="true" signature="182:245" ph="/**...*/" />
+            <marker date="1500971596443" expanded="true" signature="405:741" ph="{...}" />
+            <marker date="1500971596443" expanded="true" signature="803:1127" ph="{...}" />
+            <marker date="1500971596443" expanded="true" signature="1192:1516" ph="{...}" />
+            <marker date="1500971596443" expanded="true" signature="1575:1698" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding>
+            <marker date="1500803381293" expanded="true" signature="41:554" ph="..." />
+            <marker date="1500803381293" expanded="true" signature="556:618" ph="/**...*/" />
+            <marker date="1500803381293" expanded="true" signature="1016:1680" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/LikeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="33" column="67" lean-forward="true" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+          <folding>
+            <marker date="1500972046407" expanded="true" signature="41:540" ph="..." />
+            <marker date="1500972046407" expanded="true" signature="542:604" ph="/**...*/" />
+            <marker date="1500972046407" expanded="true" signature="755:832" ph="@{...}" />
+            <marker date="1500972046407" expanded="true" signature="896:1162" ph="{...}" />
+            <marker date="1500972046407" expanded="true" signature="1168:1248" ph="@{...}" />
+            <marker date="1500972046407" expanded="true" signature="1315:1595" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b1cc9bab/e23779a9-7a35-4f5f-a8b7-b4758c5e738e/wenda.comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupMsg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-817">
+          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <marker date="1469334574000" expanded="true" signature="0:112" ph="/** var oPopupAdd = new PopupAdd({ ...*/" />
+            <marker date="1469334574000" expanded="true" signature="399:2262" ph="{&quot;show&quot;: fStaticShow...}" />
+            <marker date="1469334574000" expanded="true" signature="415:1777" ph="[...]" />
+            <marker date="1469334574000" expanded="true" signature="471:480" ph="..." />
+            <marker date="1469334574000" expanded="true" signature="699:718" ph="..." />
+            <marker date="1469334574000" expanded="true" signature="856:884" ph="..." />
+            <marker date="1469334574000" expanded="true" signature="1542:1570" ph="..." />
+            <marker date="1469334574000" expanded="true" signature="1807:2229" ph="[...]" />
+            <marker date="1469334574000" expanded="true" signature="1808:2228" ph="{&quot;name&quot;: 'render'...}" />
+            <marker date="1469334574000" expanded="true" signature="1899:2218" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="2264:2322" ph="{&quot;initialize&quot;: fInitialize...}" />
+            <marker date="1469334574000" expanded="true" signature="2358:4259" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="2485:4190" ph="{&quot;title&quot;: '发送私信'...}" />
+            <marker date="1469334574000" expanded="true" signature="2625:4047" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="2735:2828" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="2865:2960" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3016:3068" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3148:3315" ph="{&quot;url&quot;: '/msg/addMessage'...}" />
+            <marker date="1469334574000" expanded="true" signature="3341:3824" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3424:3563" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3593:3679" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3685:3806" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3843:3901" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="3922:3978" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4072:4180" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4111:4166" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4293:4419" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4446:4827" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4509:4663" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4530:4652" ph="{...}" />
+            <marker date="1469334574000" expanded="true" signature="4669:4821" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3324">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1469251810000" expanded="true" signature="172:287" ph="{&quot;_tpl&quot;: '&lt;div&gt;&lt;/div&gt;'...}" />
+            <marker date="1469251810000" expanded="true" signature="332:682" ph="{&quot;initialize&quot;: fInitialize...}" />
+            <marker date="1469251810000" expanded="true" signature="718:961" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="837:955" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="995:1226" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="1251:1539" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="1563:1873" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="1612:1652" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="1716:1779" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="1896:2434" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2183:2208" ph="/*...*/" />
+            <marker date="1469251810000" expanded="true" signature="2304:2327" ph="/*...*/" />
+            <marker date="1469251810000" expanded="true" signature="2460:2602" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2633:2662" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2705:2783" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2811:3035" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2870:2986" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="2903:2942" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3069:3599" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3132:3163" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3344:3466" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3523:3591" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3630:5046" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3690:3721" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="3950:4030" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4109:4180" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4270:4396" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4321:4386" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4436:5040" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4671:5030" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4704:4928" ph="{...}" />
+            <marker date="1469251810000" expanded="true" signature="4934:5016" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding>
+            <marker date="1469251098000" expanded="true" signature="0:281" ph="/** var oPopup = new Popup({ ...*/" />
+            <marker date="1469251098000" expanded="true" signature="466:4006" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="503:1580" ph="[...]" />
+            <marker date="1469251098000" expanded="true" signature="569:588" ph="..." />
+            <marker date="1469251098000" expanded="true" signature="1128:1197" ph="..." />
+            <marker date="1469251098000" expanded="true" signature="1610:4000" ph="[...]" />
+            <marker date="1469251098000" expanded="true" signature="1611:2806" ph="{&quot;name&quot;: 'render'...}" />
+            <marker date="1469251098000" expanded="true" signature="1702:2796" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="2808:3228" ph="{&quot;name&quot;: 'destroy'...}" />
+            <marker date="1469251098000" expanded="true" signature="2900:3218" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="3230:3390" ph="{&quot;name&quot;: 'click .js-close'...}" />
+            <marker date="1469251098000" expanded="true" signature="3302:3380" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="3392:3658" ph="{&quot;name&quot;: 'click .js-cancel'...}" />
+            <marker date="1469251098000" expanded="true" signature="3465:3648" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="3660:3999" ph="{&quot;name&quot;: 'click .js-ok'...}" />
+            <marker date="1469251098000" expanded="true" signature="3729:3989" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="3894:3941" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="4008:4184" ph="{&quot;initialize&quot;: fInitialize...}" />
+            <marker date="1469251098000" expanded="true" signature="4220:4450" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="4477:4752" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="4566:4746" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="4627:4653" ph="..." />
+            <marker date="1469251098000" expanded="true" signature="4782:5488" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="5162:5336" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="5382:5480" ph="{&quot;width&quot;: '100%'...}" />
+            <marker date="1469251098000" expanded="true" signature="5519:5615" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="5647:5803" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="5834:6057" ph="{...}" />
+            <marker date="1469251098000" expanded="true" signature="5876:6050" ph="{&quot;content&quot;: oConf.content...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/component/popupAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="75" column="41" lean-forward="false" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+          <folding>
+            <marker date="1500973663343" expanded="true" signature="0:84" ph="/** var oPopupAdd = new PopupAdd({ ...*/" />
+            <marker date="1500973663343" expanded="true" signature="371:2164" ph="{&quot;show&quot;: fStaticShow...}" />
+            <marker date="1500973663343" expanded="true" signature="387:1677" ph="[...]" />
+            <marker date="1500973663343" expanded="true" signature="580:599" ph="..." />
+            <marker date="1500973663343" expanded="true" signature="742:770" ph="..." />
+            <marker date="1500973663343" expanded="true" signature="1442:1470" ph="..." />
+            <marker date="1500973663343" expanded="true" signature="1707:2131" ph="[...]" />
+            <marker date="1500973663343" expanded="true" signature="1708:2130" ph="{&quot;name&quot;: 'render'...}" />
+            <marker date="1500973663343" expanded="true" signature="1799:2120" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="2166:2224" ph="{&quot;initialize&quot;: fInitialize...}" />
+            <marker date="1500973663343" expanded="true" signature="2260:3902" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="2387:3833" ph="{&quot;title&quot;: '提问'...}" />
+            <marker date="1500973663343" expanded="true" signature="2525:3690" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="2634:2727" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="2783:2835" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="2915:3080" ph="{&quot;url&quot;: '/question/add'...}" />
+            <marker date="1500973663343" expanded="true" signature="3106:3467" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3189:3322" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3328:3449" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3486:3544" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3565:3621" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3715:3823" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3754:3809" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="3936:4062" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="4089:4470" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="4152:4306" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="4173:4295" ph="{...}" />
+            <marker date="1500973663343" expanded="true" signature="4312:4464" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/util/action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+          <folding>
+            <marker date="1469805642000" expanded="true" signature="108:183" ph="{&quot;like&quot;: fLike...}" />
+            <marker date="1469805642000" expanded="true" signature="191:422" ph="/** 喜欢 ...*/" />
+            <marker date="1469805642000" expanded="true" signature="449:682" ph="{...}" />
+            <marker date="1469805642000" expanded="true" signature="494:674" ph="{&quot;url&quot;: '/like'...}" />
+            <marker date="1469805642000" expanded="true" signature="688:920" ph="/** 不喜欢 ...*/" />
+            <marker date="1469805642000" expanded="true" signature="950:1186" ph="{...}" />
+            <marker date="1469805642000" expanded="true" signature="995:1178" ph="{&quot;url&quot;: '/dislike'...}" />
+            <marker date="1469805642000" expanded="true" signature="1192:1512" ph="/** 简单的 ajax 请求封装 ...*/" />
+            <marker date="1469805642000" expanded="true" signature="1539:1971" ph="{...}" />
+            <marker date="1469805642000" expanded="true" signature="1581:1723" ph="{&quot;url&quot;: oConf.url...}" />
+            <marker date="1469805642000" expanded="true" signature="1749:1924" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/main/site/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <marker date="1469840084000" expanded="true" signature="103:263" ph="{&quot;initialize&quot;: fInitialize...}" />
+            <marker date="1469840084000" expanded="true" signature="170:257" ph="{&quot;click .js-like&quot;: fVote...}" />
+            <marker date="1469840084000" expanded="true" signature="294:326" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="355:1540" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="581:612" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="638:669" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="741:1532" ph="{&quot;commentId&quot;: sId...}" />
+            <marker date="1469840084000" expanded="true" signature="808:1105" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="1145:1436" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="1189:1358" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="1364:1422" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="1470:1522" ph="{...}" />
+            <marker date="1469840084000" expanded="true" signature="1571:1647" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="96" column="31" lean-forward="true" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
+          <folding>
+            <marker date="1500975186511" expanded="true" signature="185:10646" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="290:10639" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="334:10628" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="468:1198" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1296:1462" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1339:1443" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1556:1651" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1693:4863" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1779:4844" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="1896:1955" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2019:4821" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2072:2204" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2112:2167" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2277:4794" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2344:2510" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2426:2503" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2608:2829" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2761:2825" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="2926:3087" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="3188:3410" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="3342:3406" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="3531:3696" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="3628:3692" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="3791:3958" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4058:4282" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4214:4278" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4390:4555" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4487:4551" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4658:4763" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="4974:9620" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="5443:9580" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="6099:7056" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="6218:7050" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="6311:6590" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="6724:7050" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="6831:7029" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7102:8014" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7167:7613" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7263:7458" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7387:7454" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7715:7987" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7774:7956" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7840:7949" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="7937:7943" ph="&amp;nbsp;" />
+            <marker date="1500975186511" expanded="true" signature="8120:8453" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="8342:8426" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="8622:9557" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="8674:9530" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="8780:8885" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="8920:9497" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="9724:10612" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="9891:10592" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="9954:10573" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="10013:10306" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="10081:10279" ph="..." />
+            <marker date="1500975186511" expanded="false" signature="10206:10236" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="10361:10550" ph="..." />
+            <marker date="1500975186511" expanded="true" signature="10414:10523" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzy/wenda/controller/QuestionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
           <folding />
         </state>
       </provider>
