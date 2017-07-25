@@ -34,4 +34,8 @@ public class MessageService {
     public List<Message> getConversationList(int userId, int offset, int limit){
         return messageDao.selectConversationList(userId,offset, limit);
     }
+
+    public int getConversationCount(int userId,String conversationId){
+        return messageDao.getConversationCount(userId,conversationId);
+    }
 }

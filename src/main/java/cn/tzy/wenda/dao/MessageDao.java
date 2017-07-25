@@ -35,4 +35,6 @@ public interface MessageDao {
             "order by created_date desc limit #{offset},#{limit}"})
     List<Message> selectConversationList(@Param("userId") int userId,@Param("offset") int offset, @Param("limit") int limit);
 
+    @Select({"select count(id) from",TABLE_NAEM,"where to_id=#{userId} and has_read=0 and conversation_id=#{conversationId}"})
+    int getConversationCount(@Param("userId")int userId,@Param("conversationId")String conversationId);
 }
