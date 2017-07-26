@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+import java.util.List;
+
 /**
  * Created by tuzhenyu on 17-7-25.
  * @author tuzhenyu
@@ -45,5 +47,18 @@ public class JedisService implements InitializingBean{
         jedis.close();
 
         return result;
+    }
+
+    public void lpush(String key,String value){
+        Jedis jedis = pool.getResource();
+        jedis.lpush(key,value);
+        jedis.close();
+    }
+
+    public List<String> brpop(int time, String key){
+        Jedis jedis = pool.getResource();
+        List<String> list = jedis.brpop(time,key);
+        jedis.close();
+        return list;
     }
 }
